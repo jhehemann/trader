@@ -246,6 +246,19 @@ class DecisionReceiveBehaviour(DecisionMakerBaseBehaviour):
 
         return self.mech_response.result.vote, self.mech_response.result.win_probability, self.mech_response.result.confidence
 
+    def _get_kelly_bet_amount(self, x, y, p, c, b) -> int:
+        """Calculate the Kelly bet amount."""
+        if b == 0 or x**2 == y**2:
+            self.context.logger.error(
+                "Could not calculate Kelly bet amount. Either bankroll is 0 or pool token amount is distributed as x^2 - y^2 = 0:\n"
+                f"Bankroll: {b}\n"
+                f"Pool token amounts: {x}, {y}"
+            )
+            return None
+        kelly_bet_amount = (-4*x**2*y + b*y**2*p + 2*b*x*y*p + b*x**2*p - 2*b*x**2 - 2*b*x*y + ((4*x**2*y - b*y**2*p - 2*b*x*y*p - b*x**2*p + 2*b*y**2 + 2*b*x*y)**2 - (4*(x**2 - y**2) * (-4*b*x*y**2*p - 4*b*x**2*y*p + 4*b*x*y**2)))**(1/2))/(2*(x**2 - y**2))
+        self.context.logger.info(f"Kelly bet amount _get_kelly_bet_amount: {kelly_bet_amount}")
+        return int(kelly_bet_amount)
+
     def _calc_binary_shares(self, net_bet_amount: int, vote: int) -> Tuple[int, int]:
         """Calculate the claimed shares. This calculation only works for binary markets."""
         bet = self.synchronized_data.sampled_bet
