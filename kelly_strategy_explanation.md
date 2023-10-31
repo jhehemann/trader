@@ -165,13 +165,13 @@ $$
 Using $f^* = \frac{X}{B}$, the equation can be [solved](https://www.symbolab.com/solver/functions-calculator/%5Cfrac%7Bx%7D%7BB%7D%3D%5Cfrac%7B-2xfab-2xfb%5E%7B2%7D-4b%5E%7B2%7Da%2Bxfpa%5E%7B2%7D%2B2xfpab%2Bxfpb%5E%7B2%7D%2B4pa%5E%7B2%7Db%2B4pab%5E%7B2%7D%7D%7Bxfa%5E%7B2%7D-xfb%5E%7B2%7D%2B4a%5E%7B2%7Db%7D?or=input) for $X$:
 
 $$
-X=\frac{-4a^2b+Bb^2pf+2Babpf+Ba^2pf-2Bb^2-f2Babf\pm\sqrt{(4a^2b-Bb^2pf-2Babpf-Ba^2pf+2Bb^2f+2Babf)^2-4(a^2f-b^2f)(-4Bab^2p-4Ba^2bp+4Bab^2)}}{2(a^2f-b^2f)}
+X=\frac{-4a^2b+Bb^2pf+2Babpf+Ba^2pf-2Bb^2f-2Babf\pm\sqrt{(4a^2b-Bb^2pf-2Babpf-Ba^2pf+2Bb^2f+2Babf)^2-4(a^2f-b^2f)(-4Bab^2p-4Ba^2bp+4Bab^2)}}{2(a^2f-b^2f)}
 $$
 
 Additionally if a prediction contains along with the probability score also a confidence score $c$, the probability $p$ can be reduced by $c$ with $0 \leq c \leq 1$, resulting in the updated equation:
 
 $$
-X=\frac{-4a^2b+Bb^2pcf+2Babpcf+Ba^2pcf-2Bb^2-f2Babf\pm\sqrt{(4a^2b-Bb^2pcf-2Babpcf-Ba^2pcf+2Bb^2f+2Babf)^2-4(a^2f-b^2f)(-4Bab^2pc-4Ba^2bpc+4Bab^2)}}{2(a^2f-b^2f)}
+X=\frac{-4a^2b+Bb^2pcf+2Babpcf+Ba^2pcf-2Bb^2f-2Babf\pm\sqrt{(4a^2b-Bb^2pcf-2Babpcf-Ba^2pcf+2Bb^2f+2Babf)^2-4(a^2f-b^2f)(-4Bab^2pc-4Ba^2bpc+4Bab^2)}}{2(a^2f-b^2f)}
 $$
 
 # Conclusion
